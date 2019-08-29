@@ -1,0 +1,4 @@
+[submodule "GiraffosCom/modulo"]
+	path = GiraffosCom/modulo
+	url = git@github.com:GiraffosCom/modulo.git
+	branch = master
