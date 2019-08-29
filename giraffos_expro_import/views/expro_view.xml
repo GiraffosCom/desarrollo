@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+
+        <record id="expro_siniestro_view" model="ir.ui.view">
+            <field name="name">expro.siniestro.form</field>
+            <field name="model">expro.siniestro</field>
+            <field name="arch" type="xml">
+                <form string="Siniestros">
+                    <group>
+                        <field name="fecha_ingreso"/>
+                        <field name="rut"/>
+                        <field name="nombre"/>
+                        <field name="tipo_accidente"/>
+                        <field name="estado_calificacion"/>
+                        <field name="reingreso"/>
+                        <field name="fecha_inicio_reposo"/>
+                        <field name="fecha_termino_reposo"/>
+                        <field name="dias_licencia"/>
+                        <field name="centro_costo"/>
+                        <field name="periodo"/>
+                        <field name="archivo_procesado"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="expro_siniestro_tree" model="ir.ui.view">
+            <field name="name">expro.siniestro.tree</field>
+            <field name="model">expro.siniestro</field>
+            <field name="arch" type="xml">
+                <tree string="Siniestros">
+                    <field name="nombre"/>
+                    <field name="estado_calificacion"/>
+                    <field name="fecha_inicio_reposo"/>
+                    <field name="fecha_termino_reposo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="expro_siniestro_action" model="ir.actions.act_window">
+            <field name="name">Expro Siniestros</field>
+            <field name="res_model">expro.siniestro</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                id="menu_expro_siniestro"
+                action="expro_siniestro_action"
+                name="Expro Siniestros"
+                parent="menu_expro"
+                sequence="1"/>
+
+
+        <!-- Periodo -->
+
+        <record id="expro_siniestro_periodo_tree" model="ir.ui.view">
+            <field name="name">expro.siniestro.periodo.tree</field>
+            <field name="model">expro.siniestro.periodo</field>
+            <field name="arch" type="xml">
+                <tree string="Siniestros" editable="bottom">
+                    <field name="name"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="expro_siniestro_periodo_action" model="ir.actions.act_window">
+            <field name="name">Expro Siniestros Periodos</field>
+            <field name="res_model">expro.siniestro.periodo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem
+                id="menu_expro_siniestro_periodo"
+                action="expro_siniestro_periodo_action"
+                name="Expro Siniestros Periodos"
+                parent="menu_expro"
+                sequence="3"/>
+
+    </data>
+</odoo>
