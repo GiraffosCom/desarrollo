@@ -2,3 +2,8 @@
 	path = GiraffosCom/modulo
 	url = git@github.com:GiraffosCom/modulo.git
 	branch = master
+
+[submodule "accidente"]
+	path = accidente
+	url = git@github.com:GiraffosCom/accidente.git
+	branch = master
